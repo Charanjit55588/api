@@ -9,7 +9,6 @@ import java.net.URL;
 import org.testng.annotations.Test;
 
 import base.AbstractBase;
-import base.HttpConnection;
 import util.DateURLConnection;
 
 public class Version3 extends AbstractBase{
@@ -34,35 +33,13 @@ public class Version3 extends AbstractBase{
 		
 	}
 	
-	
-	public void Header(HttpURLConnection con) throws IOException {
-		
-		
-		con.setRequestProperty("Content-Type", ContentType);
-		con.setRequestProperty("Authorization", ClientId);
-		con.setRequestProperty("User-Agent", USER_AGENT);
-
-		int responseCode = con.getResponseCode();
-		String contentType = con.getContentType();
-		int responseMessage = con.getResponseCode();
-
-		System.out.println("Response Code : " + responseCode);
-		System.out.println("Content Type : " + contentType);
-		System.out.println("Response Message : " + responseMessage);
-	}
-	
-	
-  
-	
 	public  String sendGet(String url) throws Exception {
-		// String url = "https://api.imgur.com/3/account/charanjit9085";
         
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
+	
 		
-		
-		DateURLConnection.getDateUrlConnection(con);
+		//DateURLConnection.getDateUrlConnection(con);
 		
 		// Request header
 		con.setRequestProperty("Content-Type", ContentType);

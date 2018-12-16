@@ -14,8 +14,7 @@ public class AccountBlockStatus {
 	public static void main(String s[]) throws Exception {
 		Version1 obj = new Version1();
 		
-		
-		
+
 		System.out.println("Sending HTTP GET request 12345...");
 		
 		obj.setContentType("application/vnd.api+json");

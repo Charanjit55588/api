@@ -10,48 +10,40 @@ import org.testng.annotations.Test;
 import base.*;
 import util.DateURLConnection;
 
-public class Version1 extends AbstractBase{
-   
+public class Version1 extends AbstractBase {
+
 	/*
-	 * Instance variables declared as Static are, essentially, global variables.When objects of its class are declared, no copy of 
-	 * a static variable is made. Instead, all instances of the class share the same static variable. 
+	 * Instance variables declared as Static are, essentially, global variables.When
+	 * objects of its class are declared, no copy of a static variable is made.
+	 * Instead, all instances of the class share the same static variable.
 	 */
-	public static String  baseurl = "https://api.imgur.com/account/v1/";
+	public static String baseurl = "https://api.imgur.com/account/v1/";
 	public static String username = "charanjit9085";
+
 	@Override
 	public void setContentType(String ContentType1) {
 		// TODO Auto-generated method stub
-		ContentType = ContentType1;		
+		ContentType = ContentType1;
 	}
+
 	@Override
 	public void setClientID(String ClientId1) {
 		// TODO Auto-generated method stub
-		ClientId = ClientId1;		
+		ClientId = ClientId1;
 	}
+
 	@Override
 	public void setAgent(String USER_AGENT1) {
 		// TODO Auto-generated method stub
 		USER_AGENT = USER_AGENT1;
-		
-	}
-	
 
-	
-	
-	public  String sendGet(String url) throws Exception {
-		// String url = "https://api.imgur.com/3/account/charanjit9085";
+	}
+
+	public String sendGet(String url) throws Exception {
 
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-        
-		
-		//calling date 
-		//DateURLConnection.getDateUrlConnection(con);
-		
-		
-		
-		
-		
+
 		// Request header
 		con.setRequestProperty("Content-Type", ContentType);
 		con.setRequestProperty("Authorization", ClientId);
@@ -83,12 +75,9 @@ public class Version1 extends AbstractBase{
 		 * conversion process JSON to string // toString(); so that we can print it.
 		 * then to JSONObject. This is important if you have to access the fields inside
 		 * json.
-		 * 
-		 * 
 		 */
 
 		return (response.toString());
 
 	}
 }
-
